@@ -33,6 +33,7 @@ class UserFactory extends Factory
             'phone' => $this->faker->randomNumber(9),
             'gender' => $this->faker->randomElement(['famale','male']),
             'birth_date' => $this->faker->date(),
+            'lavel_id' => '1',
             'remember_token' => Str::random(10),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

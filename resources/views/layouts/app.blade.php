@@ -13,11 +13,11 @@
           </div>
 
           <div class="links">
-                <a href="/">@lang('messages.course_students')</a>
+                <a href="/alunno/ciclo">@lang('messages.course_students')</a>
                 <a href="#">@lang('messages.student_to_company')</a>
-                <a href="#">@lang('messages.new_student')</a>
-                <a href="#">@lang('messages.admin')</a>
-                <a href="#">@lang('messages.statistics')</a>
+                <a href="/nuevoAlumno">@lang('messages.new_student')</a>
+                <a href="/admin">@lang('messages.admin')</a>
+                <a href="/estadisticas">@lang('messages.statistics')</a>
           </div>
           <hr><br><br>
 					<div class="op">

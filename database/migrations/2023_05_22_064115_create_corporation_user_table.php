@@ -19,6 +19,7 @@ class CreateCorporationUserTable extends Migration
             $table->unsignedBigInteger('corporation_id');
             $table->date('fechainicio');
             $table->date('fechafin');
+            $table->string('adress')->nullable();
             $table->integer('valoracionalumno');
             $table->integer('valoracioncentro');
 

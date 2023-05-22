@@ -15,6 +15,6 @@ class Lavel extends Model
         'name',
     ];
     public function user(){
-        return $this->hasMany(User::class, 'lavel_id');
+        return $this->hasMany(User::class);
     }
 }

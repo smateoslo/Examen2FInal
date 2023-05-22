@@ -16,6 +16,7 @@ class Corporation extends Model
         'phone',
         'email',
         'website',
+        'adress',
     ];
     public function user(){
         return $this->belongToMany(User::class)->withPivot('fechainicio', 'fechafin', 'valoracionalumno', 'valoracioncentro');

@@ -27,6 +27,7 @@ class User extends Authenticatable
         'email',
         'gender',
         'birth_date',
+        'adress',
         'lavel_id',
     ];
 
@@ -50,7 +51,7 @@ class User extends Authenticatable
     ];
 
     public function lavel(){
-        return $this->belongTo(Lavel::class);
+        return $this->belongsTo(Lavel::class);
     }
     public function corporation(){
         return $this->belongToMany(Corporation::class)->withPivot('fechainicio', 'fechafin', 'valoracionalumno', 'valoracioncentro');

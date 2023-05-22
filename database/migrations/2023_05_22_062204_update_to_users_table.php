@@ -19,8 +19,10 @@ class UpdateToUsersTable extends Migration
             $table->integer('phone')->nullable();
             $table->string('gender')->nullable();
             $table->date('birth_date')->nullable();
+            $table->string('adress')->nullable();
+            $table->string('role')->default('user');
             $table->unsignedBigInteger('lavel_id')->nullable();
-            $table->foreign('lavel_id')->references('id')->on('lavels')->onDelate('set null')->unUpdate('cascade');
+            $table->foreign('lavel_id')->references('id')->on('users')->constrained()->onDelate('cascade')->unUpdate('cascade');
         });
     }
 
