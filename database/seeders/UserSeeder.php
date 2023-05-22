@@ -36,11 +36,11 @@ class UserSeeder extends Seeder
             $randomLastName = random_int(0, 9);
             $gender = $genders[$randomName % 2];
             DB::table('users')->insert([
-                'nif' => random_int(11111111, 99999999) . chr(rand(65,90)),
+                'dni' => random_int(11111111, 99999999) . chr(rand(65,90)),
                 'name' => $firstNames[$randomName],
                 'lastname' => $lastnames[$randomLastName],
                 'phone' => random_int(610000000, 699999999),
-                'date_of_birth' => Carbon::today()->subDays(rand(-200, 365)),
+                'birth_date' => Carbon::today()->subDays(rand(-200, 365)),
                 'gender' => $gender,
                 'email' => $firstNames[$randomName] . $lastnames[$randomLastName] . $i . "@zubirimanteo.com",
                 'password' => bcrypt("password"),

@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Lavel;
+use App\Models\Corporation;
 
 class User extends Authenticatable
 {
@@ -17,9 +19,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'dni',
         'name',
-        'email',
+        'lastname',
         'password',
+        'phone',
+        'email',
+        'gender',
+        'birth_date',
+        'lavel_id',
     ];
 
     /**
@@ -40,4 +48,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function lavel(){
+        return $this->belongTo(Lavel::class);
+    }
+    public function corporation(){
+        return $this->belongToMany(Corporation::class)->withPivot('fechainicio', 'fechafin', 'valoracionalumno', 'valoracioncentro');
+    }
 }
